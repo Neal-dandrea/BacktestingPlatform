@@ -1,0 +1,28 @@
+digraph BacktestingPlatformHybridArchitecture {
+	fontsize=10 nodesep=1 rankdir=TB ranksep=1.5
+	Frontend [label="Frontend (React)" color=lightblue shape=box style=filled]
+	Backend [label="Backend (Node.js)" color=lightgreen shape=box style=filled]
+	PostgreSQL [label="Relational Database (PostgreSQL/InfluxDB)" color=orange shape=cylinder style=filled]
+	GraphDB [label="Graph Database (Neo4j)" color=yellowgreen shape=cylinder style=filled]
+	APIs [label="External APIs
+(Alpha Vantage, Quandl, Binance)" color=yellow shape=box style=filled]
+	ML [label="ML/AI Models
+(Reinforcement Learning, Forecasting)" color=pink shape=box style=filled]
+	Admin [label="Admin Role
+(Manage Features)" color=lightgrey shape=ellipse style=filled]
+	Trader [label="Trader/Researcher
+(Use Features)" color=lightgrey shape=ellipse style=filled]
+	Admin -> Frontend
+	Trader -> Frontend
+	Frontend -> Backend
+	Backend -> PostgreSQL
+	Backend -> GraphDB
+	Backend -> APIs
+	Backend -> ML
+	APIs -> Backend
+	ML -> Backend
+	GraphDB -> Backend
+	PostgreSQL -> Backend
+	fontsize=16 label="Hybrid Architecture for Backtesting Platform
+"
+}
